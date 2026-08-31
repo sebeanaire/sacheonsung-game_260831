@@ -1,0 +1,206 @@
+```html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f7772">
+
+  <title>사천성 게임</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="brand">
+    <span class="brand-icon">🌸</span>
+    <strong>사천성 게임</strong>
+  </div>
+
+  <nav>
+    <button class="nav-btn" data-action="home">
+      ⌂ <span>홈</span>
+    </button>
+
+    <button class="nav-btn" data-action="rank">
+      🏆 <span>순위</span>
+    </button>
+
+    <button class="nav-btn" data-action="help">
+      ❔ <span>도움말</span>
+    </button>
+  </nav>
+
+  <div class="tools">
+    <button id="soundBtn" title="소리">🔊</button>
+    <button id="fullBtn" title="전체화면">⛶</button>
+  </div>
+
+</header>
+
+
+<main class="layout">
+
+  <!-- 왼쪽 -->
+  <aside class="side left">
+
+    <section class="panel">
+
+      <h2>게임 정보</h2>
+
+      <div class="stat">
+        <span>레벨</span>
+        <b id="level">1</b>
+      </div>
+
+      <div class="stat">
+        <span>점수</span>
+        <b id="score">0</b>
+      </div>
+
+      <div class="stat">
+        <span>남은 시간</span>
+        <b id="time">05:00</b>
+      </div>
+
+      <div class="stat">
+        <span>힌트</span>
+        <b id="hint">3</b>
+      </div>
+
+      <div class="stat">
+        <span>되돌리기</span>
+        <b id="undo">3</b>
+      </div>
+
+    </section>
+
+
+    <button class="primary big" id="newBtn">
+      ▶ 새 게임
+    </button>
+
+    <button class="secondary big" id="restartBtn">
+      ↻ 다시 시작
+    </button>
+
+    <button class="secondary big" id="levelBtn">
+      ☷ 레벨 선택
+    </button>
+
+  </aside>
+
+
+  <!-- 게임 영역 -->
+  <section class="game-wrap">
+
+    <div class="game-head">
+
+      <span id="message">
+        같은 그림 두 장을 연결해 보세요!
+      </span>
+
+      <div class="filters">
+
+        <button class="chip active" data-theme="all">
+          전체
+        </button>
+
+        <button class="chip" data-theme="hwatu">
+          화투
+        </button>
+
+        <button class="chip" data-theme="card">
+          카드
+        </button>
+
+        <button class="chip" data-theme="fruit">
+          과일
+        </button>
+
+        <button class="chip" data-theme="animal">
+          동물
+        </button>
+
+        <button class="chip" data-theme="character">
+          캐릭터
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div id="board" class="board" aria-label="사천성 게임판"></div>
+
+  </section>
+
+
+  <!-- 오른쪽 -->
+  <aside class="side right">
+
+    <section class="panel goal">
+
+      <h2>다음 목표</h2>
+
+      <p>
+        모든 짝을<br>
+        맞춰보세요!
+      </p>
+
+      <div id="target"></div>
+
+    </section>
+
+
+    <section class="panel">
+
+      <h2>조작 방법</h2>
+
+      <p>
+        🖱️ <b>클릭</b><br>
+        카드 선택
+      </p>
+
+      <p>
+        ⌁ <b>연결</b><br>
+        직선/두 번 꺾기 이내
+      </p>
+
+      <p>
+        🗑️ <b>제거</b><br>
+        짝이 맞으면 제거
+      </p>
+
+    </section>
+
+  </aside>
+
+</main>
+
+
+<footer>
+  © 2026 사천성 게임 · 개인/상업 프로젝트에 자유롭게 사용 가능한 자체 제작 UI
+</footer>
+
+
+<!-- 팝업 -->
+<dialog id="modal">
+
+  <div id="modalContent"></div>
+
+  <button class="primary" id="closeModal">
+    확인
+  </button>
+
+</dialog>
+
+
+<script src="game.js"></script>
+
+</body>
+</html>
+```
