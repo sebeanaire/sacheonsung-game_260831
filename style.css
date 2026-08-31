@@ -1,0 +1,702 @@
+```css
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+
+  background: #f7f0e5;
+
+  color: #4c3828;
+
+  font-family:
+    "Malgun Gothic",
+    "Noto Sans KR",
+    sans-serif;
+}
+
+
+/* =========================
+   상단 메뉴
+========================= */
+
+.topbar {
+
+  height: 82px;
+
+  background: #fffaf2;
+
+  border-bottom: 2px solid #eadcc8;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 28px;
+
+  gap: 45px;
+}
+
+
+.brand {
+
+  font-size: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  white-space: nowrap;
+}
+
+
+.brand-icon {
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  background: #72502d;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 29px;
+}
+
+
+.topbar nav {
+
+  display: flex;
+
+  height: 100%;
+}
+
+
+.nav-btn {
+
+  border: 0;
+
+  background: none;
+
+  color: #4c3828;
+
+  font-size: 18px;
+
+  padding: 0 24px;
+
+  cursor: pointer;
+}
+
+
+.nav-btn + .nav-btn {
+
+  border-left: 1px solid #eadcc8;
+}
+
+
+.tools {
+
+  margin-left: auto;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+
+.tools button {
+
+  width: 52px;
+  height: 52px;
+
+  border: 2px solid #ecd8b8;
+
+  border-radius: 50%;
+
+  background: none;
+
+  cursor: pointer;
+
+  font-size: 23px;
+}
+
+
+/* =========================
+   전체 레이아웃
+========================= */
+
+.layout {
+
+  display: grid;
+
+  grid-template-columns:
+    240px
+    minmax(600px, 1fr)
+    240px;
+
+  gap: 24px;
+
+  max-width: 1500px;
+
+  margin: 26px auto;
+
+  padding: 0 24px;
+}
+
+
+.side {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================
+   패널
+========================= */
+
+.panel {
+
+  background: #fffaf2;
+
+  border: 1px solid #ead8bd;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 14px #6c4c2412;
+}
+
+
+.panel h2 {
+
+  font-size: 22px;
+
+  margin: 0;
+
+  padding: 18px;
+
+  border-bottom: 1px solid #eadcc8;
+
+  text-align: center;
+}
+
+
+.stat {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #eee1cf;
+
+  font-size: 17px;
+}
+
+
+.stat b {
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   버튼
+========================= */
+
+.primary,
+.secondary {
+
+  border-radius: 13px;
+
+  padding: 15px;
+
+  border: 1px solid #dfc8a4;
+
+  font-weight: 700;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+.primary {
+
+  background: #62b968;
+
+  color: white;
+
+  border-color: #4ea455;
+}
+
+
+.secondary {
+
+  background: #fffaf2;
+
+  color: #5a4027;
+}
+
+
+.big {
+
+  width: 100%;
+}
+
+
+/* =========================
+   게임 상단
+========================= */
+
+.game-wrap {
+
+  min-width: 0;
+}
+
+
+.game-head {
+
+  background: #fffaf2;
+
+  border: 1px solid #ead8bd;
+
+  border-radius: 16px 16px 0 0;
+
+  padding: 13px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.filters {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  justify-content: flex-end;
+}
+
+
+.chip {
+
+  border: 1px solid #dbc6a7;
+
+  background: white;
+
+  padding: 7px 10px;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+}
+
+
+.chip.active {
+
+  background: #e8c98f;
+}
+
+
+/* =========================
+   게임판
+========================= */
+
+.board {
+
+  position: relative;
+
+  background: #3e7772;
+
+  border: 14px solid #e5d0a9;
+
+  border-radius: 0 0 18px 18px;
+
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(10, 1fr);
+
+  gap: 8px;
+
+  min-height: 620px;
+
+  box-shadow:
+    inset 0 0 0 2px #2e625e;
+}
+
+
+/* =========================
+   타일
+========================= */
+
+.tile {
+
+  aspect-ratio: 1 / 1;
+
+  min-height: 58px;
+
+  border: 2px solid #dcc49d;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf7,
+      #eee1c5
+    );
+
+  box-shadow:
+    0 4px 0 #b49668,
+    0 5px 8px #153d3a44;
+
+  display: grid;
+
+  place-items: center;
+
+  cursor: pointer;
+
+  position: relative;
+
+  user-select: none;
+
+  transition: 0.12s;
+
+  font-size: 35px;
+}
+
+
+.tile:hover {
+
+  transform:
+    translateY(-3px);
+}
+
+
+.tile.selected {
+
+  outline: 4px solid #efaa35;
+
+  transform:
+    translateY(-4px);
+}
+
+
+.tile.removed {
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+.tile.hint {
+
+  animation:
+    pulse 0.7s infinite alternate;
+}
+
+
+.tile small {
+
+  position: absolute;
+
+  top: 4px;
+
+  left: 6px;
+
+  font-size: 9px;
+
+  color: #8b6d45;
+}
+
+
+@keyframes pulse {
+
+  to {
+
+    box-shadow:
+      0 0 0 5px #f5bf4a;
+  }
+
+}
+
+
+/* =========================
+   오른쪽 목표
+========================= */
+
+.goal p {
+
+  text-align: center;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+.target-card {
+
+  font-size: 48px;
+
+  text-align: center;
+
+  padding: 18px;
+}
+
+
+.side.right p {
+
+  padding: 0 20px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   푸터
+========================= */
+
+footer {
+
+  text-align: center;
+
+  padding: 16px;
+
+  color: #8e7b65;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   팝업
+========================= */
+
+dialog {
+
+  border: 0;
+
+  border-radius: 18px;
+
+  padding: 28px;
+
+  min-width: 320px;
+
+  box-shadow:
+    0 20px 60px #0004;
+
+  background: #fffaf2;
+
+  color: #4c3828;
+}
+
+
+dialog::backdrop {
+
+  background: #0006;
+}
+
+
+#modalContent {
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   1100px 이하
+========================= */
+
+@media (max-width: 1100px) {
+
+  .layout {
+
+    grid-template-columns:
+      190px
+      minmax(480px, 1fr);
+  }
+
+
+  .right {
+
+    display: none;
+  }
+
+
+  .board {
+
+    grid-template-columns:
+      repeat(8, 1fr);
+  }
+
+}
+
+
+/* =========================
+   모바일
+========================= */
+
+@media (max-width: 720px) {
+
+  .topbar {
+
+    height: auto;
+
+    padding: 12px;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+  }
+
+
+  .topbar nav {
+
+    order: 3;
+
+    width: 100%;
+
+    height: 44px;
+  }
+
+
+  .nav-btn {
+
+    flex: 1;
+
+    padding: 0;
+  }
+
+
+  .layout {
+
+    display: block;
+
+    padding: 10px;
+
+    margin: 0;
+  }
+
+
+  .left {
+
+    margin-bottom: 12px;
+  }
+
+
+  .left .panel {
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(5, 1fr);
+  }
+
+
+  .left .panel h2 {
+
+    grid-column:
+      1 / -1;
+  }
+
+
+  .left .stat {
+
+    padding: 10px;
+
+    display: block;
+
+    text-align: center;
+  }
+
+
+  .left .stat b {
+
+    display: block;
+
+    margin-top: 4px;
+  }
+
+
+  .left .big {
+
+    margin-bottom: 8px;
+  }
+
+
+  .board {
+
+    grid-template-columns:
+      repeat(8, 1fr);
+
+    padding: 8px;
+
+    gap: 5px;
+
+    border-width: 8px;
+
+    min-height: 0;
+  }
+
+
+  .tile {
+
+    min-height: 0;
+
+    font-size: 25px;
+  }
+
+
+  .game-head {
+
+    display: block;
+  }
+
+
+  .filters {
+
+    justify-content: flex-start;
+
+    margin-top: 8px;
+  }
+
+
+  .brand {
+
+    font-size: 22px;
+  }
+
+}
+```
